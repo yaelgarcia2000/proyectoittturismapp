@@ -1,0 +1,928 @@
+@administradorCiudad =  http://localhost:3000/administradorCiudad
+@administradorEstablecimiento = http://localhost:3000/administradorEstablecimiento
+@calificacionesEstablecimientoUsuario = http://localhost:3000/calificacionesEstablecimientoUsuario
+@calificacionesUsuariosCiudades = http://localhost:3000/calificacionesUsuariosCiudades
+@ciudades = http://localhost:3000/ciudades
+@direccion = http://localhost:3000/direccion
+@entradasUsuarioAgenda = http://localhost:3000/entradasUsuarioAgenda
+@establecimientoPro = http://localhost:3000/establecimientoPro
+@establecimientos = http://localhost:3000/establecimientos
+@festividad = http://localhost:3000/festividad
+@fotosCiudad = http://localhost:3000/fotosCiudad
+@fotosEstablecimiento = http://localhost:3000/fotosEstablecimiento
+@horarioAtencion = http://localhost:3000/horarioAtencion
+@horaSalida = http://localhost:3000/horaSalida
+@notasCiudad = http://localhost:3000/notasCiudad
+@origenTransporte = http://localhost:3000/origenTransporte
+@personajesImportantes = http://localhost:3000/personajesImportantes
+@platillos = http://localhost:3000/platillos
+@resenhasCiudad = http://localhost:3000/resenhasCiudad
+@resenhasEstablecimiento = http://localhost:3000/resenhasEstablecimiento
+@salidasTransporte = http://localhost:3000/salidasTransporte
+@tasks = http://localhost:3000/tasks
+@tiposTurismo = http://localhost:3000/tiposTurismo
+@tipoTurismoCiudad = http://localhost:3000/tipoTurismoCiudad
+@usuarioApp = http://localhost:3000/usuarioApp
+@usuarios = http://localhost:3000/usuarios
+@zonasTuristicas = http://localhost:3000/zonasTuristicas
+
+###   administradorCiudad
+GET {{administradorCiudad}}
+###
+GET {{administradorCiudad}}/count
+###
+GET {{administradorCiudad}}/7
+###
+POST {{administradorCiudad}}
+Content-Type: application/json
+
+{
+  "nombreUsuario": "yuya",
+   "nombre": "Yael Garcia Cuesta",
+   "correo": "yael@gmail.com",
+   "imagenUsuario" :"foto2",
+   "cargoCiudad": "Precidentessss",
+   "claveAcceso": "1"
+}
+###
+DELETE {{administradorCiudad}}/3
+### 
+PUT {{administradorCiudad}}/7
+content-type: application/json
+
+{
+    "nombreUsuario": "lsgm",
+    "nombre": "Luis Serapio Garcia Martinez",
+    "correo": "luis@gmail.com",
+    "imagenUsuario": "foto6",
+    "cargoCiudad": "Presidente",
+    "claveAcceso": "9"
+}
+
+###   administradorEstablecimiento
+GET {{administradorEstablecimiento}}
+###
+GET {{administradorEstablecimiento}}/count
+###
+GET {{administradorEstablecimiento}}/4
+###
+POST {{administradorEstablecimiento}}
+Content-Type: application/json
+
+{
+  "claveAcceso": "ahora26",
+  "nombreUsuario": "kcdl",
+  "nombre": "Karen Castro De Leon",
+  "correo": "karen@gmail.com",
+  "imagenUsuario": "fotoDeHamburgeso",
+  "cargoEmpresa": "Juez"
+}
+###
+DELETE {{administradorEstablecimiento}}/3
+### 
+PUT {{administradorEstablecimiento}}/4
+content-type: application/json
+
+{
+    "claveAcceso": "123456",
+    "nombreUsuario": "kcdl",
+    "nombre": "yael",
+    "correo": "karen@gmail.com",
+    "imagenUsuario": "fotoDeHamburgeso",
+    "cargoEmpresa": "Juezx"
+}
+
+
+
+
+###   calificacionesEstablecimientoUsuario
+GET {{calificacionesEstablecimientoUsuario}}
+###
+GET {{calificacionesEstablecimientoUsuario}}/count
+###   
+GET {{calificacionesEstablecimientoUsuario}}/1
+###   
+POST {{calificacionesEstablecimientoUsuario}}
+Content-Type: application/json
+
+{
+    "_idEstablecimiento":3 ,
+    "_idUsuario": 1,
+    "calificacion": 2
+}
+###   
+DELETE {{calificacionesEstablecimientoUsuario}}/1
+###   
+PUT {{calificacionesEstablecimientoUsuario}}/1
+content-type: application/json
+
+{
+   "_idUsuario": 1,
+  "calificacion": 5
+}
+
+
+
+
+
+###   calificacionesUsuariosCiudades
+GET {{calificacionesUsuariosCiudades}}
+###
+GET {{calificacionesUsuariosCiudades}}/count
+###   
+GET {{calificacionesUsuariosCiudades}}/2
+###   
+POST {{calificacionesUsuariosCiudades}}
+Content-Type: application/json
+
+{
+  "_idUsuario": 2,
+ "_idCiudad": 1,
+  "calificacion": 5
+}
+###   
+DELETE {{calificacionesUsuariosCiudades}}/2
+###   
+PUT {{calificacionesUsuariosCiudades}}/2
+content-type: application/json
+
+{
+  "_idUsuario": 2,
+ "_idCiudad": 1,
+  "calificacion": 9
+}
+
+
+###   ciudades
+GET {{ciudades}}
+###
+GET {{ciudades}}/count
+###   
+GET {{ciudades}}/4
+###   
+POST {{ciudades}}
+Content-Type: application/json
+
+{
+    "_id_administrador": 1,
+    "nombreCiudad": "Huautla de jimenez",
+    "region": "CN",
+    "municipio": "H",
+    "correo": "huautla@gmail.com",
+    "telefono": "2363745896",
+    "urlMaps": "https://goo.gl/maps/WdPfpHCMcgWfR8Vr9",
+    "puebloMagico": 1,
+    "tiposTurismo": "GS",
+    "numero_emergencias": "2363745896",
+    "calificacion": 9,
+    "cantidadCalificaciones": 8,
+    "descripcion": "Pueblo",
+    "imagenRepresentativa": "imagen1707"
+}
+###   
+DELETE {{ciudades}}/2
+###   
+PUT {{ciudades}}/6
+content-type: application/json
+
+{
+    "_id_administrador": 1,
+    "nombreCiudad": "Tehuacan",
+    "region": "CN",
+    "municipio": "Huaulta de Jimenez",
+    "correo": "huautla@gmail.com",
+    "telefono": "2363745896",
+    "urlMaps": "https://goo.gl/maps/WdPfpHCMcgWfR8Vr9",
+    "puebloMagico": 1,
+    "tiposTurismo": "GS",
+    "numero_emergencias": "2363745896",
+    "calificacion": 9,
+    "cantidadCalificaciones": 8,
+    "descripcion": "E",
+    "imagenRepresentativa": "imagendeTehuacan"
+}
+
+
+###   direccion
+GET {{direccion}}
+###
+GET {{direccion}}/count
+###
+GET {{direccion}}/10
+###
+POST {{direccion}}
+Content-Type: application/json
+
+{
+ "idDireccion": 4,
+  "_idEstablecimiento": 4,
+  "_idCiudad": 1,
+  "colonia": "Centro",
+  "numero": "#58",
+  "cp": "22222",
+  "calle": "Conocida"
+}
+###
+DELETE {{direccion}}/8
+### 
+PUT {{direccion}}/10
+content-type: application/json
+
+{
+    "_idEstablecimiento": 4,
+    "_idCiudad": 1,
+    "colonia": "Luis",
+    "numero": "Luis",
+    "cp": "Luis",
+    "calle": "LuisS"
+}
+
+###   entradasUsuarioAgenda
+GET {{entradasUsuarioAgenda}}
+###
+GET {{entradasUsuarioAgenda}}
+###
+###
+GET {{entradasUsuarioAgenda}}/count
+###
+GET {{entradasUsuarioAgenda}}/21
+###
+POST {{entradasUsuarioAgenda}}
+Content-Type: application/json
+
+{
+      "_idUsuario":1,
+      "_idCiudad":1,
+      "_idTransporte":1,
+      "fechaVisita":"2005-04-22",
+      "hora":"05:05:05"
+}
+###
+DELETE {{entradasUsuarioAgenda}}/13
+### 
+PUT {{entradasUsuarioAgenda}}/11
+content-type: application/json
+
+{
+  "_idUsuario": 1,
+  "_idCiudad": 1,
+  "_idTransporte": 1,
+  "fechaVisita": "2009-07-17T05:00:00.000Z",
+  "hora": "08:09:00"
+}
+
+
+###   establecimientoPro
+GET {{establecimientoPro}}
+###
+GET {{establecimientoPro}}/count
+###
+GET {{establecimientoPro}}/8
+### REVISAR
+POST {{establecimientoPro}}
+Content-Type: application/json
+
+{
+ "_idAdministrador": 1,
+  "calificacion": 5,
+  "cantidadCalificaciones": 19,
+  "paginaWeb": "www.pintersupertiendas.com",
+  "urlMaps": "https://www.google.com/maps/@18.1306211,-96.8463022,21z",
+  "tiposPago": "EF,yy"
+}
+### REVISAR
+DELETE {{establecimientoPro}}/2
+### 
+PUT {{establecimientoPro}}/2
+content-type: application/json
+
+{
+  "_idAdministrador": 1,
+  "calificacion": 5,
+  "cantidadCalificaciones": 19,
+  "paginaWeb": "www.pintersupertiendas.com",
+  "urlMaps": "https://www.google.com/maps/@18.1306211,-96.8463022,21z",
+  "tiposPago": "KK,YY"
+}
+
+
+
+
+
+
+###   establecimientos
+GET {{establecimientos}}
+###
+GET {{establecimientos}}/count
+###
+GET {{establecimientos}}/8
+### 
+POST {{establecimientos}}
+Content-Type: application/json
+
+{
+    "nombre": "La pirateria",
+    "tipoEstablecimiento": "SP",
+    "telefono": "1234567890",
+    "correo": "lapirateria@gmail.com",
+    "pro": "S",
+    "imagenRepresentativa": "fotodelapirateria "
+}
+### 
+DELETE {{establecimientos}}/9
+### 
+PUT {{establecimientos}}/8
+content-type: application/json
+
+{
+  "nombre": "La pirateria",
+    "tipoEstablecimiento": "SP",
+    "telefono": "1234567890",
+    "correo": "lapirateria@gmail.com",
+    "pro": "S",
+    "imagenRepresentativa": "fotodelapirateria"
+}
+
+
+
+
+
+
+###   festividad
+GET {{festividad}}
+###
+GET {{festividad}}/count
+###
+GET {{festividad}}/5
+###
+POST {{festividad}}
+Content-Type: application/json
+
+{
+  "_idCiudad": 1,
+    "dia": 11,
+    "mes": 1,
+    "nombre": "Festival de Maria Sabina",
+    "descripcion": "Entre la sabiduría ancestral y el mito, María Sabina fue la chamana oaxaqueña",
+    "imagen": "foto999"
+}
+###
+DELETE {{festividad}}/1
+### 
+PUT {{festividad}}/5
+content-type: application/json
+
+{
+  "_idCiudad": 1,
+    "dia": 12,
+    "mes": 1,
+    "nombre": "Festival de Maria Sabina",
+    "descripcion": "Entre la sabiduría ancestral y el mito, María Sabina fue la chamana oaxaqueña",
+    "imagen": "foto2"
+}
+
+
+
+
+
+
+###   fotosCiudad
+GET {{fotosCiudad}}
+###
+GET {{fotosCiudad}}/count
+###
+GET {{fotosCiudad}}/1
+###
+POST {{fotosCiudad}}
+Content-Type: application/json
+
+{
+"foto": "5",
+    "_idCiudad": 1,
+    "descripcion": "f"
+}
+###
+DELETE {{fotosCiudad}}/5
+### 
+PUT {{fotosCiudad}}/5
+content-type: application/json
+
+{
+"foto": "5",
+    "_idCiudad": 1,
+    "descripcion": "f"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+###   fotosEstablecimiento
+GET {{fotosEstablecimiento}}
+###
+GET {{fotosEstablecimiento}}/count
+###
+GET {{fotosEstablecimiento}}/8
+###
+POST {{fotosEstablecimiento}}
+Content-Type: application/json
+
+{
+  "foto": "10",
+  "_idEstablecimiento": 1,
+  "descripcion": "hola"
+}
+###
+DELETE {{fotosEstablecimiento}}/1
+### 
+PUT {{fotosEstablecimiento}}/8
+content-type: application/json
+
+{
+"foto": "8",
+    "_idEstablecimiento": 8,
+    "descripcion": "editado"
+}
+
+
+
+
+
+
+
+###   horarioAtencion
+GET {{horarioAtencion}}
+###
+GET {{horarioAtencion}}/count
+###
+GET {{horarioAtencion}}/1
+###
+POST {{horarioAtencion}}
+Content-Type: application/json
+
+{
+  "_idEstablecimiento": 1,
+  "lunes": "8:00–20:00",
+  "martes": "8:00–20:00",
+  "miercoles": "8:00–20:00",
+  "jueves": "8:00–20:00",
+  "viernes": "8:00–20:00",
+  "sabado": "8:00–18:00",
+  "domingo": "8:00–14:00"
+}
+###
+DELETE {{horarioAtencion}}/7
+### 
+PUT {{horarioAtencion}}/1
+content-type: application/json
+
+{
+  "_idEstablecimiento": 1,
+  "lunes": "8:00–20:00",
+  "martes": "8:00–20:00",
+  "miercoles": "8:00–20:00",
+  "jueves": "8:00–20:00",
+  "viernes": "8:00–20:00",
+  "sabado": "8:00–18:00",
+  "domingo": "8:00–14:00"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+###   horaSalida
+GET {{horaSalida}}
+###
+GET {{horaSalida}}/count
+###
+GET {{horaSalida}}/3
+###
+POST {{horaSalida}}
+Content-Type: application/json
+
+{
+  "idHora": 4,
+    "_idSalidasTransporte": 3,
+    "hora": "15:11"
+}
+###
+DELETE {{horaSalida}}/2
+### 
+PUT {{horaSalida}}/4
+content-type: application/json
+
+{
+  "idHora": 4,
+    "_idSalidasTransporte": 3,
+    "hora": "15:00"
+}
+
+
+
+
+
+###   notasCiudad
+GET {{notasCiudad}}
+###
+GET {{notasCiudad}}/count
+###
+GET {{notasCiudad}}/1
+###
+POST {{notasCiudad}}
+Content-Type: application/json
+
+{
+  "_idCiudad": 1,
+  "titulo": "Holas como estas",
+  "descripcion": "Bien Gracias",
+  "imagen": "infinitum",
+  "fechaPublicacion": "2021-04-08T05:00:00.000Z"
+}
+###
+DELETE {{notasCiudad}}/1
+### 
+PUT {{notasCiudad}}/15
+content-type: application/json
+
+{
+  "_idCiudad": 1,
+  "titulo": "Holas como estas",
+  "descripcion": "Bien Gracias",
+  "imagen": "i",
+  "fechaPublicacion": "2022-03-08T05:00:00.000Z"
+}
+
+
+
+
+###   origenTransporte
+GET {{origenTransporte}}
+###
+GET {{origenTransporte}}/count
+###
+GET {{origenTransporte}}/3
+###   
+POST {{origenTransporte}}
+Content-Type: application/json
+
+{
+   "_idCiudad": 1,
+    "_idTransporte": 3
+}
+
+###
+DELETE {{origenTransporte}}/4
+### 
+PUT {{origenTransporte}}/1
+content-type: application/json
+
+{
+ "_idTransporte": 2
+}
+
+
+
+
+###   personajesImportantes
+GET {{personajesImportantes}}
+###
+GET {{personajesImportantes}}/count
+###
+GET {{personajesImportantes}}/14
+###
+POST {{personajesImportantes}}
+Content-Type: application/json
+
+{
+    "_idCiudad": 1,
+    "nombre": "Yael",
+    "anhoNacimiento": 1020,
+    "anhoFallecimiento": 3000,
+    "descripcion": "Nunca envegecera",
+    "foto": "fotos de Yaelssss"
+}
+###
+DELETE {{personajesImportantes}}/15
+### 
+PUT {{personajesImportantes}}/14
+content-type: application/json
+
+{
+    "_idCiudad": 1,
+    "nombre": "Huehuentones",
+    "anhoNacimiento": 1990,
+    "anhoFallecimiento": 2020,
+    "descripcion": "Hola",
+    "foto": "foto1"
+}
+
+
+
+
+
+###   platillos
+GET {{platillos}}
+###
+GET {{platillos}}/count
+###
+GET {{platillos}}/1
+###
+POST {{platillos}}
+Content-Type: application/json
+
+{
+  "_idCiudad": 1,
+  "nombre": "Tacos de canasta",
+  "descripcion": "La mejor comida",
+  "imagen": "Los tacos las cuapas"
+}
+###
+DELETE {{platillos}}/2
+### 
+PUT {{platillos}}/1
+content-type: application/json
+
+{
+    "_idCiudad": 1,
+    "nombre": "Tamales",
+    "descripcion": "Platillo",
+    "imagen": "Foto"
+}
+
+
+
+
+
+###   resenhasCiudad
+GET {{resenhasCiudad}}
+###
+GET {{resenhasCiudad}}/count
+###
+GET {{resenhasCiudad}}/2
+###
+POST {{resenhasCiudad}}
+Content-Type: application/json
+
+{
+  "_idUsuario": 1,
+  "_idCiudad": 1,
+  "contenido": "contenido de una persona"
+}
+###
+DELETE {{resenhasCiudad}}/4
+### 
+PUT {{resenhasCiudad}}/2
+content-type: application/json
+
+{
+     "_idUsuario": 1,
+  "_idCiudad": 1,
+  "contenido": "xxx"
+}
+
+
+
+
+
+###   resenhasEstablecimiento
+GET {{resenhasEstablecimiento}}
+###
+GET {{resenhasEstablecimiento}}/count
+###
+GET {{resenhasEstablecimiento}}/2
+###
+POST {{resenhasEstablecimiento}}
+Content-Type: application/json
+
+{
+    "_idEstablecimiento": 1,
+    "_idUsuario": 1,
+    "contenido": "bueno y malo"
+}
+###
+DELETE {{resenhasEstablecimiento}}/2
+### 
+PUT {{resenhasEstablecimiento}}/3
+content-type: application/json
+
+{
+    "_idEstablecimiento": 1,
+    "_idUsuario": 1,
+    "contenido": "hola como estas"
+}
+
+
+
+
+
+###   salidasTransporte
+GET {{salidasTransporte}}
+###
+GET {{salidasTransporte}}/count
+###
+GET {{salidasTransporte}}/1
+###
+POST {{salidasTransporte}}
+Content-Type: application/json
+
+{
+    "_idTransporte": 1,
+    "_idCiudadDestino": 1,
+    "dia": "2",
+    "duracionViaje": 20
+}
+###
+DELETE {{salidasTransporte}}/2
+### 
+PUT {{salidasTransporte}}/3
+content-type: application/json
+
+{
+    "_idTransporte": 1,
+    "_idCiudadDestino": 1,
+    "dia": "99",
+    "duracionViaje": 90
+}
+
+
+
+
+
+###   tasks
+GET {{tasks}}
+###
+GET {{tasks}}/count
+###
+GET {{tasks}}/1
+###
+POST {{tasks}}
+Content-Type: application/json
+
+{
+   "title": "perro",
+  "description": "Guao"
+}
+###
+DELETE {{tasks}}/1
+### 
+PUT {{tasks}}/3
+content-type: application/json
+
+{
+    "title": "gato",
+  "description": "Miau"
+}
+
+
+
+
+
+
+###   tiposTurismo
+GET {{tiposTurismo}}
+###
+GET {{tiposTurismo}}/count
+###
+GET {{tiposTurismo}}/LS
+###
+POST {{tiposTurismo}}
+Content-Type: application/json
+
+{
+   "idTiposTurismo": "YA",
+  "tipoTurismo": "YAEL"
+}
+###
+DELETE {{tiposTurismo}}/YA
+### 
+PUT {{tiposTurismo}}/LS
+content-type: application/json
+
+{
+   "idTiposTurismo": "LS",
+    "tipoTurismo": "yael"
+}
+
+
+
+
+
+
+###   tipoTurismoCiudad
+GET {{tipoTurismoCiudad}}
+###
+GET {{tipoTurismoCiudad}}/count
+###
+GET {{tipoTurismoCiudad}}/1
+###
+POST {{tipoTurismoCiudad}}
+Content-Type: application/json
+
+{
+   "_idCiudad": 1,
+  "_idTiposTurismo": "LS"
+}
+###
+DELETE {{tipoTurismoCiudad}}/
+### 
+PUT {{tipoTurismoCiudad}}/1
+content-type: application/json
+
+{
+   "_idCiudad": 1,
+  "_idTiposTurismo": "YA"
+}
+
+
+
+
+
+
+###   usuarioApp
+GET {{usuarioApp}}
+###
+GET {{usuarioApp}}/count
+###
+GET {{usuarioApp}}/1
+###
+POST {{usuarioApp}}
+Content-Type: application/json
+
+{
+  "nombreUsuario": "YAEL",
+  "nombre": "Yael Garcia Cuesta",
+  "fechaNacimiento": "2000-04-06T05:00:00.000Z",
+  "correo": "yael@gmail.com",
+  "genero": "H",
+  "tiposTurismo": "NT",
+  "imagenUsuario": "Imagen de Yael",
+  "claveAcceso": "yael"
+}
+###
+DELETE {{usuarioApp}}/
+### 
+PUT {{usuarioApp}}/1
+content-type: application/json
+
+{
+  "nombreUsuario": "luis",
+    "nombre": "Luis Serapio Martinez Garcia",
+    "fechaNacimiento": "2022-04-06T05:00:00.000Z",
+    "correo": "luis@gmail.com",
+    "genero": "H",
+    "tiposTurismo": "NT",
+    "imagenUsuario": "Imagen de Luis",
+    "claveAcceso": "luis"
+}
+
+
+
+
+
+
+###   zonasTuristicas
+GET {{zonasTuristicas}}
+###
+GET {{zonasTuristicas}}/count
+###
+GET {{zonasTuristicas}}/12
+###
+POST {{zonasTuristicas}}
+Content-Type: application/json
+
+{
+  "_idCiudad": 1,
+    "nombre": "Casa de Yael",
+    "tipoZona": "CL",
+    "descripcion": "La casa de Yael es bonita",
+    "foto": "Foto de la casa de Yael"
+}
+###
+DELETE {{zonasTuristicas}}/
+### 
+PUT {{zonasTuristicas}}/12
+content-type: application/json
+
+{
+  "_idCiudad": 1,
+    "nombre": "Casa de Lupe",
+    "tipoZona": "CL",
+    "descripcion": "La casa de Yael es bonita",
+    "foto": "Foto de la casa de Yael"
+}
