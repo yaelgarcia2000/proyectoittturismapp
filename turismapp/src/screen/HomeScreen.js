@@ -1,87 +1,44 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {UserContext} from '../context/user';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import COLORS, {COLOR_PRIMARY, COLOR_SECONDARY} from '../utils/paleta';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-
 import {
   View,
   Text,
   ScrollView,
   Image,
   StyleSheet,
-  FlatList,
   TouchableOpacity,
   TextInput,
   Dimensions,
+  StatusBar,
 } from 'react-native';
-import COLORS, {COLOR_PRIMARY, COLOR_SECONDARY} from '../utils/paleta';
-
 import {CardLugaresHome} from '../components/cardLugaresHome';
 import {CardHotelesHome} from '../components/cardHotelesHome';
 import {CardRestaurantesHome} from '../components/cardRestaurantesHome';
 import {useNavigation} from '@react-navigation/native';
 
 const {width} = Dimensions.get('screen');
-const dataCategory = [
-  {
-    id: '1',
-    icon: 'map-signs',
-    title: 'Viajes',
-    isAcive: true,
-  },
-  {
-    id: '2',
-    icon: 'photo',
-    title: 'Lugares',
-    isAcive: false,
-  },
-  {
-    id: '3',
-    icon: 'youtube',
-    title: 'YouTube',
-    isAcive: false,
-  },
-  {
-    id: '4',
-    icon: 'leanpub',
-    title: 'Noticias',
-    isAcive: false,
-  },
-  {
-    id: '5',
-    icon: 'instagram',
-    title: 'Instagram',
-    isAcive: false,
-  },
-  {
-    id: '6',
-    icon: 'twitter',
-    title: 'Twitter',
-    isAcive: false,
-  },
-  {
-    id: '7',
-    icon: 'facebook-official',
-    title: 'Facebook',
-    isAcive: false,
-  },
-];
 
-export const HomeScreen = ({ciudades}) => {
+export const HomeScreen = () => {
   const navigation = useNavigation();
+  const {me} = useContext(UserContext);
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar translucent={false} backgroundColor={COLOR_PRIMARY} />
       <View style={styles.header}>
         <View>
-          <Text style={styles.name}>Hola Yael García Cuesta</Text>
-          <Text style={{fontSize: 12, color: COLORS.white}}>
-            Buenos dias!!!!
-          </Text>
+          <Text style={styles.name}>Hola {me.name}</Text>
+          <Text style={{fontSize: 12, color: COLORS.white}}>Bienvenido</Text>
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate('NotaScreen')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
           <Image
             style={styles.avatar}
             source={{
-              uri: 'https://ta.azureedge.net/p/api/usuario/dup/eWwg4cLU2Ujy3zxvmqQgQYdhMYwxO4zo0.jpg/120x120cut/',
+              uri:
+                me.photo ||
+                'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
             }}
           />
         </TouchableOpacity>
@@ -114,32 +71,7 @@ export const HomeScreen = ({ciudades}) => {
           </View>
         </View>
       </View>
-
       <ScrollView showsVerticalScrollIndicator={false}>
-        {/*
-        <View style={{alignItems: 'center'}}>
-          <CardAnuncio />
-        </View>
-        <View>
-          <View style={styles.sectionHear}>
-            <Text style={styles.titleCategoria}>Categoria</Text>
-            <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
-          </View>
-          <FlatList
-            data={dataCategory}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            renderItem={({item}) => (
-              <TouchableOpacity key={item.id}>
-                <CircleCategoria
-                  title={item.title}
-                  icon={item.icon}
-                  isActive={item.isAcive}
-                />
-              </TouchableOpacity>
-            )}
-          />
-        </View>*/}
         <View>
           <View style={styles.sectionHear}>
             <Text style={styles.titleCategoria}>Lugares</Text>

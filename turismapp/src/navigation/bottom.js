@@ -1,23 +1,19 @@
 import React from 'react';
-import {Text, View,TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity} from 'react-native';
 import New from 'react-native-vector-icons/FontAwesome';
-
-import {EstablecimientoProScreen} from '../screen/EstablecimientoProScreen';
-import {EstablecimientoScreen} from '../screen/EstablecimientoScreen';
-import {HomeScreen} from '../screen/HomeScreen';
-import {NewScreen} from '../screen/NewScreen';
-import {NotaScreen} from '../screen/NotaScreen';
-import {PlaceScreen} from '../screen/PlaceScreen';
-import {ReseniaScreen} from '../screen/ReseniaScreen';
-import {WelcomeScreen} from '../screen/WelcomeScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import COLORS, {COLOR_PRIMATY_OPACITY, COLOR_PRIMARY} from '../utils/paleta';
+import COLORS, {COLOR_PRIMARY} from '../utils/paleta';
+import {HomeScreen} from '../screen/HomeScreen'; // Inicio
+import {PlaceScreen} from '../screen/PlaceScreen'; // Lugares
+import {EstablecimientoProScreen} from '../screen/EstablecimientoProScreen'; // Negocios
+import {NewScreen} from '../screen/NewScreen'; // Noticias
+import {NotaScreen} from '../screen/NotaScreen'; // Agenda
 
 const Tab = createBottomTabNavigator();
 
 export const BottonNavigation = () => {
   return (
-    <Tab.Navigator initialRouteName="Home">
+    <Tab.Navigator initialRouteName="HomeScreen">
       <Tab.Screen
         name="HomeScreen"
         component={HomeScreen}
@@ -59,17 +55,25 @@ export const BottonNavigation = () => {
       <Tab.Screen
         name="NotaScreen"
         component={NotaScreen}
-        options={({ navigation} ) => ({
+        options={({navigation}) => ({
           tabBarIcon: ({color}) => (
             <TabBarIcon name="sticky-note" color={color} />
           ),
           title: 'Agenda',
-          headerStyle:{backgroundColor:COLOR_PRIMARY},
-          headerTitleStyle: {color:COLORS.white, fontSize:30, fontWeight:'bold'},
-          headerRight : () => (
-           <TouchableOpacity onPress={() => navigation.navigate('AgendaFormScreen')}>
-              <Text style={{color:COLORS.white, marginRight:25, fontSize:18}}>Nuevo</Text>
-           </TouchableOpacity>
+          headerStyle: {backgroundColor: COLOR_PRIMARY},
+          headerTitleStyle: {
+            color: COLORS.white,
+            fontSize: 30,
+            fontWeight: 'bold',
+          },
+          headerRight: () => (
+            <TouchableOpacity
+              onPress={() => navigation.navigate('AgendaFormScreen')}>
+              <Text
+                style={{color: COLORS.white, marginRight: 25, fontSize: 18}}>
+                Nuevo
+              </Text>
+            </TouchableOpacity>
           ),
         })}
       />

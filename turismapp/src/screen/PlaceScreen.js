@@ -1,6 +1,13 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {StyleSheet, View, Text, Image, TextInput} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  StatusBar,
+  Text,
+  Image,
+  TextInput,
+} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {CardLugares} from '../components/cardLugares';
 import COLORS, {COLOR_PRIMATY_OPACITY, COLOR_PRIMARY} from '../utils/paleta';
@@ -8,6 +15,7 @@ import COLORS, {COLOR_PRIMATY_OPACITY, COLOR_PRIMARY} from '../utils/paleta';
 export const PlaceScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar translucent={false} backgroundColor={COLOR_PRIMARY} />
       <View
         style={{
           backgroundColor: COLOR_PRIMARY,

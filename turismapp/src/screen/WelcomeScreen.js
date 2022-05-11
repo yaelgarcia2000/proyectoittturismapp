@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {UserContext} from '../context/user';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {COLOR_PRIMARY, COLOR_SECONDARY} from '../utils/paleta';
@@ -12,10 +13,11 @@ import {
   Dimensions,
   StatusBar,
 } from 'react-native';
-//import {ScrollView} from 'react-native-gesture-handler';
+
 const {height, width} = Dimensions.get('screen');
 
 export const WelcomeScreen = ({navigation}) => {
+  const {me} = useContext(UserContext);
   return (
     <SafeAreaView style={styles.main}>
       <StatusBar translucent={false} backgroundColor={COLOR_PRIMARY} />
@@ -50,33 +52,21 @@ export const WelcomeScreen = ({navigation}) => {
           </Text>
           <TouchableOpacity
             style={styles.btnStar}
-            onPress={() => navigation.navigate('Root')}>
+            onPress={() => navigation.navigate('Login')}>
             <AntDesign name="right" style={styles.circleIcon} />
             <Text style={styles.textBtn}>Empezar</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnStar}>
+          <TouchableOpacity
+            style={styles.btnStar}
+            onPress={() =>
+              me
+                ? navigation.navigate('Root')
+                : navigation.navigate('AuthScreen')
+            }>
             <AntDesign name="right" style={styles.circleIcon} />
             <Text style={styles.textBtn}>Iniciar Sesión</Text>
           </TouchableOpacity>
-          {/*<TouchableOpacity
-            style={styles.btnStar}
-            onPress={() => navigation.navigate('Home')}>
-            <AntDesign name="right" style={styles.circleIcon} />
-            <Text style={styles.textBtn}>Empezar</Text>
-        </TouchableOpacity>*/}
-          {/* <TouchableOpacity
-            style={styles.btnStar}
-            onPress={() => navigation.navigate('Login')}>
-            <AntDesign name="right" style={styles.circleIcon} />
-            <Text style={styles.textBtn}>Iniciar sesión</Text>
-      </TouchableOpacity>*/}
-          {/*<TouchableOpacity
-            style={styles.btnStar}
-            onPress={() => navigation.navigate('LoginScreen')}>
-            <AntDesign name="right" style={styles.circleIcon} />
-            <Text style={styles.textBtn}>Iniciar sesión</Text>
-          </TouchableOpacity>*/}
           <View style={styles.version}>
             <Text>Version 0.1</Text>
           </View>

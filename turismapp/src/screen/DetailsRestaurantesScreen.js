@@ -24,12 +24,6 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
             color={COLORS.white}
             onPress={navigation.goBack}
           />
-          {/*      <MaterialIcons
-            name="arrow-back-ios"
-            size={28}
-            color={COLORS.white}
-            onPress={navigation.goBack}
-          />*/}
         </View>
         <View style={styles.imageDetails}>
           <Text
