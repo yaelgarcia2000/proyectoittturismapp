@@ -10,10 +10,12 @@ export const Profile = () => {
   const {me, setMe} = React.useContext(UserContext);
 
   const closeSesion = async () => {
-    await GoogleSignin.signOut();
+    const sesion = await GoogleSignin.signIn();
+    sesion && (await GoogleSignin.signOut());
     await AsyncStorage.removeItem('sesion');
     setMe(undefined);
   };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={{marginTop: 30, alignItems: 'center'}}>

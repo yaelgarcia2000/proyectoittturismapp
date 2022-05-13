@@ -20,41 +20,8 @@ export const Navigation = () => {
   const {me} = useContext(UserContext);
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="WelcomeScreen">
-        {me ? (
-          <>
-            <Stack.Screen
-              name="Root"
-              component={BottonNavigation}
-              options={{headerShown: false, title: 'Root'}}
-            />
-          </>
-        ) : (
-          <>
-            <Stack.Screen
-              name="WelcomeScreen"
-              component={WelcomeScreen}
-              options={{headerShown: false, title: 'WelcomeScreen'}}
-            />
-            <Stack.Screen
-              name="AuthScreen"
-              component={AuthScreen}
-              options={{headerShown: false, title: 'AuthScreen'}}
-            />
-            <Stack.Screen name="Agenda" component={NotaScreen} />
-
-            <Stack.Screen
-              name="PlaceScreen"
-              component={PlaceScreen}
-              options={{headerShown: false, title: 'PlaceScreen'}}
-            />
-            <Stack.Screen
-              name="EstablecimientoProScreen"
-              component={BottonNavigation}
-              options={{headerShown: false, title: 'EstablecimientoProScreen'}}
-            />
-          </>
-        )}
+      <Stack.Navigator initialRouteName="Root">
+        {me ? <></> : null}
         <Stack.Screen
           name="Profile"
           component={Profile}
@@ -68,6 +35,34 @@ export const Navigation = () => {
             },
             headerTintColor: COLORS.white,
           }}
+        />
+
+        <Stack.Screen
+          name="Root"
+          component={BottonNavigation}
+          options={{headerShown: false, title: 'Root'}}
+        />
+        <Stack.Screen
+          name="WelcomeScreen"
+          component={WelcomeScreen}
+          options={{headerShown: false, title: 'WelcomeScreen'}}
+        />
+        <Stack.Screen
+          name="AuthScreen"
+          component={AuthScreen}
+          options={{headerShown: false, title: 'AuthScreen'}}
+        />
+        <Stack.Screen name="Agenda" component={NotaScreen} />
+
+        <Stack.Screen
+          name="PlaceScreen"
+          component={PlaceScreen}
+          options={{headerShown: false, title: 'PlaceScreen'}}
+        />
+        <Stack.Screen
+          name="EstablecimientoProScreen"
+          component={BottonNavigation}
+          options={{headerShown: false, title: 'EstablecimientoProScreen'}}
         />
 
         <Stack.Screen

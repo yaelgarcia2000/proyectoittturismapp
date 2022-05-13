@@ -29,7 +29,7 @@ export const HomeScreen = () => {
       <StatusBar translucent={false} backgroundColor={COLOR_PRIMARY} />
       <View style={styles.header}>
         <View>
-          <Text style={styles.name}>Hola {me.name}</Text>
+          <Text style={styles.name}>Hola {me ? me.name : 'anonimo'}</Text>
           <Text style={{fontSize: 12, color: COLORS.white}}>Bienvenido</Text>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
@@ -37,7 +37,7 @@ export const HomeScreen = () => {
             style={styles.avatar}
             source={{
               uri:
-                me.photo ||
+                me?.photo ||
                 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
             }}
           />

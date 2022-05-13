@@ -52,7 +52,7 @@ export const WelcomeScreen = ({navigation}) => {
           </Text>
           <TouchableOpacity
             style={styles.btnStar}
-            onPress={() => navigation.navigate('Login')}>
+            onPress={() => navigation.navigate('Root')}>
             <AntDesign name="right" style={styles.circleIcon} />
             <Text style={styles.textBtn}>Empezar</Text>
           </TouchableOpacity>
