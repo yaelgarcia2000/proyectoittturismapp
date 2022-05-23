@@ -2,7 +2,9 @@ import { connect } from "../database";
 
 export const getResenhasCiudades = async (req, res) => {
   const connection = await connect();
-  const [rows] = await connection.query("SELECT * FROM resenhas_ciudad");
+  const [rows] = await connection.query(
+    "SELECT resenhas_ciudad._idCiudad AS idCiudad, resenhas_ciudad.contenido AS Contenido, usuario_app.nombre AS Nombre, usuario_app.correo AS Correo, usuario_app.imagenUsuario AS Imagen, ciudades.nombreCiudad AS NombreCiudad FROM usuario_app JOIN resenhas_ciudad ON resenhas_ciudad._idUsuario = usuario_app.idUsuario JOIN ciudades ON resenhas_ciudad._idCiudad = ciudades.idCiudad;"
+  );
   res.json(rows);
 };
 

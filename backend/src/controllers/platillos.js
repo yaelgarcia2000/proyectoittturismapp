@@ -2,7 +2,9 @@ import { connect } from "../database";
 
 export const getPlatilloss = async (req, res) => {
   const connection = await connect();
-  const [rows] = await connection.query("SELECT * FROM platillos");
+  const [rows] = await connection.query(
+    "SELECT platillos.nombre AS NombrePlatillo, platillos.descripcion AS DescrionPlatillo, platillos.imagen AS ImagenPlatillo, ciudades.nombreCiudad AS NombreCiudades from platillos JOIN ciudades ON platillos._idCiudad = ciudades.idCiudad"
+  );
   res.json(rows);
 };
 

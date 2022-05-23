@@ -57,7 +57,7 @@ export const BottonNavigation = () => {
         component={NotaScreen}
         options={({navigation}) => ({
           tabBarIcon: ({color}) => (
-            <TabBarIcon name="sticky-note" color={color} />
+            <TabBarIcon name="pencil-square-o" color={color} />
           ),
           title: 'Agenda',
           headerStyle: {backgroundColor: COLOR_PRIMARY},

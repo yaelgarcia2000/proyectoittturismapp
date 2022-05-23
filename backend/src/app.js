@@ -34,6 +34,14 @@ import tiposTurismoRoutes from "./routes/tiposTurismo";
 import tipoTurismoCiudadRoutes from "./routes/tipoTurismoCiudad";
 import usuarioAppRoutes from "./routes/usuarioApp";
 import zonasTuristicasRoutes from "./routes/zonasTuristicas";
+import serviceRestaurantRoutes from "./routes/serviceRestaurant";
+import serviceHotelRoutes from "./routes/serviceHotel";
+import serviceTransportRoutes from "./routes/serviceTransport";
+import serviceMarketRoutes from "./routes/serviceMarket";
+import serviceBankRoutes from "./routes/serviceBank";
+import serviceGovernmentRoutes from "./routes/serviceGovernment";
+import serviceSupermarketRoutes from "./routes/serviceSupermarket";
+import serviceShopRoutes from "./routes/serviceShop";
 
 import swaggerUI from "swagger-ui-express";
 
@@ -68,6 +76,15 @@ app.use(tiposTurismoRoutes);
 app.use(tipoTurismoCiudadRoutes);
 app.use(usuarioAppRoutes);
 app.use(zonasTuristicasRoutes);
+
+app.use(serviceRestaurantRoutes);
+app.use(serviceHotelRoutes);
+app.use(serviceTransportRoutes);
+app.use(serviceMarketRoutes);
+app.use(serviceBankRoutes);
+app.use(serviceGovernmentRoutes);
+app.use(serviceSupermarketRoutes);
+app.use(serviceShopRoutes);
 
 app.use("/docs", swaggerUiExpress.serve, swaggerUiExpress.setup(specs));
 

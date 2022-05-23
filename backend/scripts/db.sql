@@ -1106,3 +1106,26 @@ content-type: application/json
     "descripcion": "La casa de Yael es bonita",
     "foto": "Foto de la casa de Yael"
 }
+
+SELECT 
+establecimientos.nombre AS NombreEstable, 
+establecimientos.telefono AS TelefonoEstable, 
+establecimientos.correo AS CorreoEstable, 
+establecimientos.imagenRepresentativa AS ImagenEstable, 
+establecimiento_pro.calificacion AS CalificacionPro, 
+establecimiento_pro.cantidadCalificaciones AS CantidadCalificionPro, 
+establecimiento_pro.paginaWeb AS PaginaWebPro, 
+establecimiento_pro.urlMaps AS UrlMapaPro,
+direccion.calle AS CalleDireccion,
+direccion.numero AS NumeroDireccion,
+direccion.cp AS CPDireccion,
+direccion.colonia AS ColoniaDireccion,
+ciudades.nombreCiudad AS NombreCiudad
+FROM establecimientos 
+JOIN establecimiento_pro 
+ON establecimientos.idEstablecimiento=establecimiento_pro._idEstablecimiento 
+JOIN direccion
+ON  establecimientos.idEstablecimiento=direccion._idEstablecimiento
+JOIN ciudades
+ON ciudades.idCiudad = direccion._idCiudad
+WHERE establecimientos.tipoEstablecimiento="TR"

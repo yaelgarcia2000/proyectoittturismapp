@@ -11,16 +11,16 @@ import {
 import COLORS, {COLOR_PRIMARY} from '../utils/paleta';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-export const DetailsPlaceScreen = ({navigation, route}) => {
-  const ciudades = route.params;
-  console.log(ciudades);
-  console.log(ciudades.imagenRepresentativa);
+export const DetailsPlaceServiceHotelScreen = ({navigation, route}) => {
+  const hoteles = route.params;
+  console.log(hoteles);
+  console.log(hoteles.imagenRepresentativa);
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
       <ImageBackground
         style={{flex: 0.7}}
         source={{
-          uri: `https://drive.google.com/uc?id=${ciudades.imagenRepresentativa}`,
+          uri: `https://drive.google.com/uc?id=${hoteles.ImagenEstable}`,
         }}>
         <View style={styles.header}>
           <MaterialIcons
@@ -39,13 +39,13 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
               color: COLORS.white,
               marginBottom: 20,
             }}>
-            {ciudades.nombreCiudad}
+            {hoteles.NombreEstable}
           </Text>
           <View style={{flexDirection: 'row'}}>
             <MaterialIcons name="star" size={30} color={COLORS.orange} />
             <Text
               style={{color: COLORS.white, fontSize: 20, fontWeight: 'bold'}}>
-              5
+              {hoteles.CalificacionPro}
             </Text>
           </View>
         </View>
@@ -56,7 +56,7 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={{flexDirection: 'row', marginTop: 1}}>
-            <MaterialIcons name="place" size={28} color={COLORS.dark} />
+            <MaterialIcons name="local-hotel" size={28} color={COLORS.dark} />
             <Text
               style={{
                 marginLeft: 5,
@@ -64,7 +64,7 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
                 fontWeight: 'bold',
                 color: COLORS.primary,
               }}>
-              {ciudades.nombreCiudad}
+              {hoteles.NombreEstable}
             </Text>
           </View>
           <Text
@@ -74,20 +74,20 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
               fontSize: 20,
               color: COLORS.dark,
             }}>
-            Aceca de este lugar
+            Información del restaurante
           </Text>
           <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
             <View>
               <Text
                 style={{
-                  marginLeft: 5,
+                  marginLeft: 10,
                   marginTop: 20,
                   marginRight: 10,
                   fontSize: 18,
                   fontWeight: 'bold',
                   color: COLORS.primary,
                 }}>
-                Región :
+                Telefono :
               </Text>
             </View>
             <View>
@@ -99,7 +99,7 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
                   fontSize: 18,
                   fontWeight: 'bold',
                 }}>
-                {ciudades.region}
+                {hoteles.TelefonoEstable}
               </Text>
             </View>
           </View>
@@ -107,172 +107,7 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
             <View>
               <Text
                 style={{
-                  marginLeft: 5,
-                  marginTop: 10,
-                  marginRight: 10,
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                  color: COLORS.primary,
-                }}>
-                Municipio :
-              </Text>
-            </View>
-            <View>
-              <Text
-                style={{
-                  marginLeft: 1,
-                  marginTop: 10,
-                  marginRight: 20,
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                }}>
-                {ciudades.municipio}
-              </Text>
-            </View>
-          </View>
-          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
-            <View>
-              <Text
-                style={{
-                  marginLeft: 5,
-                  marginTop: 10,
-                  marginRight: 10,
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                  color: COLORS.primary,
-                }}>
-                Localizacion :
-              </Text>
-            </View>
-            <View>
-              <Text
-                style={{
-                  marginLeft: 1,
-                  marginTop: 10,
-                  marginRight: 20,
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                }}>
-                {ciudades.urlMaps}
-              </Text>
-            </View>
-          </View>
-          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
-            <View>
-              <Text
-                style={{
-                  marginLeft: 5,
-                  marginTop: 10,
-                  marginRight: 10,
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                  color: COLORS.primary,
-                }}>
-                Tipo de turismo :
-              </Text>
-            </View>
-            <View>
-              <Text
-                style={{
-                  marginLeft: 1,
-                  marginTop: 10,
-                  marginRight: 20,
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                }}>
-                {ciudades.tipo}
-              </Text>
-            </View>
-          </View>
-          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
-            <View>
-              <Text
-                style={{
-                  marginLeft: 5,
-                  marginTop: 20,
-                  marginRight: 10,
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                  color: COLORS.primary,
-                }}>
-                Atractivo :
-              </Text>
-            </View>
-            <View>
-              <Text
-                style={{
-                  marginLeft: 1,
-                  marginTop: 20,
-                  marginRight: 20,
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                }}>
-                {ciudades.tiposTurismo}
-              </Text>
-            </View>
-          </View>
-          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
-            <View>
-              <Text
-                style={{
-                  marginLeft: 5,
-                  marginTop: 20,
-                  marginRight: 10,
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                  color: COLORS.primary,
-                }}>
-                Calificación :
-              </Text>
-            </View>
-            <View>
-              <Text
-                style={{
-                  marginLeft: 1,
-                  marginTop: 20,
-                  marginRight: 20,
-                  fontSize: 18,
-                  fontWeight: 'bold',
-                }}>
-                {ciudades.calificacion}
-              </Text>
-            </View>
-          </View>
-          <Text
-            style={{
-              marginTop: 25,
-              fontWeight: 'bold',
-              fontSize: 20,
-              color: COLORS.dark,
-            }}>
-            Descripción :
-          </Text>
-          <Text
-            style={{
-              marginLeft: 5,
-              marginTop: 10,
-              marginRight: 20,
-              fontSize: 18,
-              fontWeight: '300',
-              lineHeight: 22,
-              color: COLORS.dark,
-            }}>
-            {ciudades.descripcion}
-          </Text>
-          <Text
-            style={{
-              marginTop: 20,
-              fontWeight: 'bold',
-              fontSize: 20,
-              color: COLORS.dark,
-            }}>
-            Información adicional :
-          </Text>
-          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
-            <View>
-              <Text
-                style={{
-                  marginLeft: 5,
+                  marginLeft: 10,
                   marginTop: 10,
                   marginRight: 10,
                   fontSize: 18,
@@ -291,7 +126,7 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
                   fontSize: 18,
                   fontWeight: 'bold',
                 }}>
-                {ciudades.correo}
+                {hoteles.CorreoEstable}
               </Text>
             </View>
           </View>
@@ -299,14 +134,14 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
             <View>
               <Text
                 style={{
-                  marginLeft: 5,
+                  marginLeft: 10,
                   marginTop: 10,
                   marginRight: 10,
                   fontSize: 18,
                   fontWeight: 'bold',
                   color: COLORS.primary,
                 }}>
-                Número :
+                Calificacion :
               </Text>
             </View>
             <View>
@@ -318,7 +153,7 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
                   fontSize: 18,
                   fontWeight: 'bold',
                 }}>
-                {ciudades.telefono}
+                {hoteles.CalificacionPro}
               </Text>
             </View>
           </View>
@@ -326,14 +161,14 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
             <View>
               <Text
                 style={{
-                  marginLeft: 5,
+                  marginLeft: 10,
                   marginTop: 10,
                   marginRight: 10,
                   fontSize: 18,
                   fontWeight: 'bold',
                   color: COLORS.primary,
                 }}>
-                Número de emergencias :
+                Página web:
               </Text>
             </View>
             <View>
@@ -345,7 +180,266 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
                   fontSize: 18,
                   fontWeight: 'bold',
                 }}>
-                {ciudades.numero_emergencias}
+                {hoteles.PaginaWebPro}
+              </Text>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 10,
+                  marginTop: 20,
+                  marginRight: 10,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  color: COLORS.primary,
+                }}>
+                URL mapa :
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 1,
+                  marginTop: 20,
+                  marginRight: 20,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                {hoteles.UrlMapaPro}
+              </Text>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 10,
+                  marginTop: 20,
+                  marginRight: 10,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  color: COLORS.primary,
+                }}>
+                Direeción :
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 1,
+                  marginTop: 20,
+                  marginRight: 20,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                {hoteles.CalleDireccion}
+                {', '}
+                {hoteles.NumeroDireccion}
+                {', '}
+                {hoteles.CPDireccion} {'\n'}
+                {hoteles.ColoniaDireccion}
+                {', '}
+                {hoteles.NombreCiudad}
+              </Text>
+            </View>
+          </View>
+          <Text
+            style={{
+              marginTop: 20,
+              fontWeight: 'bold',
+              fontSize: 20,
+              color: COLORS.dark,
+            }}>
+            Días y horas de atención al cliente :
+          </Text>
+          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 10,
+                  marginTop: 10,
+                  marginRight: 10,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  color: COLORS.primary,
+                }}>
+                Lunes :
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 1,
+                  marginTop: 10,
+                  marginRight: 20,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                {hoteles.Lunes}
+              </Text>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 10,
+                  marginTop: 10,
+                  marginRight: 10,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  color: COLORS.primary,
+                }}>
+                Martes :
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 1,
+                  marginTop: 10,
+                  marginRight: 20,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                {hoteles.Martes}
+              </Text>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 10,
+                  marginTop: 10,
+                  marginRight: 10,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  color: COLORS.primary,
+                }}>
+                Miércoles :
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 1,
+                  marginTop: 10,
+                  marginRight: 20,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                {hoteles.Miercoles}
+              </Text>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 10,
+                  marginTop: 10,
+                  marginRight: 10,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  color: COLORS.primary,
+                }}>
+                Jueves :
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 1,
+                  marginTop: 10,
+                  marginRight: 20,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                {hoteles.Jueves}
+              </Text>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 10,
+                  marginTop: 10,
+                  marginRight: 10,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  color: COLORS.primary,
+                }}>
+                Viernes :
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 1,
+                  marginTop: 10,
+                  marginRight: 20,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                {hoteles.Viernes}
+              </Text>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 10,
+                  marginTop: 10,
+                  marginRight: 10,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  color: COLORS.primary,
+                }}>
+                Sabado :
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 1,
+                  marginTop: 10,
+                  marginRight: 20,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                {hoteles.Sabado}
+              </Text>
+            </View>
+          </View>
+          <View style={{flexDirection: 'row', alignContent: 'space-between'}}>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 10,
+                  marginTop: 10,
+                  marginRight: 10,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                  color: COLORS.primary,
+                }}>
+                Domingo :
+              </Text>
+            </View>
+            <View>
+              <Text
+                style={{
+                  marginLeft: 1,
+                  marginTop: 10,
+                  marginRight: 20,
+                  fontSize: 18,
+                  fontWeight: 'bold',
+                }}>
+                {hoteles.Domingo}
               </Text>
             </View>
           </View>
@@ -364,7 +458,7 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
           <Text style={{fontSize: 16, fontWeight: 'bold', color: COLORS.white}}>
             / Sobre la zona
           </Text>
-        </View>*/}
+        </View>
         <TouchableOpacity
           onPress={() => navigation.navigate('PlaceServiceScreen')}>
           <View style={styles.btnImagenes}>
@@ -382,7 +476,7 @@ export const DetailsPlaceScreen = ({navigation, route}) => {
               Sobre la zona
             </Text>
           </View>
-        </TouchableOpacity>
+        </TouchableOpacity>*/}
       </View>
     </SafeAreaView>
   );
@@ -428,7 +522,7 @@ const styles = StyleSheet.create({
   footer: {
     flexDirection: 'row',
     backgroundColor: COLOR_PRIMARY,
-    height: 50,
+    height: 10,
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 20,

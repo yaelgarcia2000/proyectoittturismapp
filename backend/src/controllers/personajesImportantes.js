@@ -2,7 +2,9 @@ import { connect } from "../database";
 
 export const getPersonajesImportantess = async (req, res) => {
   const connection = await connect();
-  const [rows] = await connection.query("SELECT * FROM personajes_importantes");
+  const [rows] = await connection.query(
+    "SELECT personajes_importantes.nombre AS NombrePersonaje, personajes_importantes.anhoNacimiento AS Nacimiento, personajes_importantes.anhoFallecimiento AS Fallecimiento, personajes_importantes.descripcion AS Descripcion, personajes_importantes.foto AS Foto, ciudades.nombreCiudad AS NombreCiudad FROM personajes_importantes JOIN ciudades on personajes_importantes._idCiudad = ciudades.idCiudad"
+  );
   res.json(rows);
 };
 

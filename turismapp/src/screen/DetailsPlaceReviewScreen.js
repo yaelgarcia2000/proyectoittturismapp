@@ -5,7 +5,7 @@ import {UserContext} from '../context/user';
 import {CardAgenda} from '../components/cardAgenda';
 import COLORS, {COLOR_PRIMATY_OPACITY, COLOR_PRIMARY} from '../utils/paleta';
 
-export const NotaScreen = ({navigation}) => {
+export const DetailsPlaceReviewScreen = ({navigation}) => {
   const {me} = useContext(UserContext);
 
   useEffect(() => {

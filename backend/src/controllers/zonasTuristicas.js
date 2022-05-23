@@ -2,7 +2,9 @@ import { connect } from "../database";
 
 export const getZonasTuristicass = async (req, res) => {
   const connection = await connect();
-  const [rows] = await connection.query("SELECT * FROM zonas_turisticas");
+  const [rows] = await connection.query(
+    "SELECT ciudades.idCiudad AS idCiudad, ciudades.nombreCiudad AS NombreCiudad, ciudades.municipio AS Municipio, ciudades.calificacion, ciudades.cantidadCalificaciones, zonas_turisticas.nombre AS NombreZonaTuris, zonas_turisticas.tipoZona AS TipoZona, zonas_turisticas.descripcion AS Descripcion, zonas_turisticas.foto AS Foto FROM ciudades JOIN zonas_turisticas ON ciudades.idCiudad = zonas_turisticas._idCiudad"
+  );
   res.json(rows);
 };
 

@@ -15,8 +15,8 @@ import {
   StatusBar,
 } from 'react-native';
 import {CardLugaresHome} from '../components/cardLugaresHome';
-import {CardHotelesHome} from '../components/cardHotelesHome';
-import {CardRestaurantesHome} from '../components/cardRestaurantesHome';
+import {CardServiceHotel} from '../components/cardServiceHotel';
+import {CardServiceRestaurant} from '../components/cardServiceRestaurant';
 import {useNavigation} from '@react-navigation/native';
 
 const {width} = Dimensions.get('screen');
@@ -29,7 +29,7 @@ export const HomeScreen = () => {
       <StatusBar translucent={false} backgroundColor={COLOR_PRIMARY} />
       <View style={styles.header}>
         <View>
-          <Text style={styles.name}>Hola {me ? me.name : 'anonimo'}</Text>
+          <Text style={styles.name}>Hola {me ? me.name : '!!!'}</Text>
           <Text style={{fontSize: 12, color: COLORS.white}}>Bienvenido</Text>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
@@ -38,7 +38,7 @@ export const HomeScreen = () => {
             source={{
               uri:
                 me?.photo ||
-                'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
             }}
           />
         </TouchableOpacity>
@@ -48,7 +48,7 @@ export const HomeScreen = () => {
           backgroundColor: COLOR_PRIMARY,
           height: 90,
           paddingHorizontal: 30,
-          marginBottom: 40,
+          marginBottom: 1,
         }}>
         <View>
           <View style={styles.head}>
@@ -61,14 +61,14 @@ export const HomeScreen = () => {
               source={require('../assest/img/jaguar.png')}
             />
           </View>
-          <View style={styles.inputContainer}>
+          {/*<View style={styles.inputContainer}>
             <MaterialIcons name="search" size={25} color={COLORS.dark} />
             <TextInput
               color={COLORS.grey}
               placeholder="Buscar lugar"
               style={{color: COLORS.dark}}
             />
-          </View>
+          </View>*/}
         </View>
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -93,7 +93,7 @@ export const HomeScreen = () => {
             </TouchableOpacity>
           </View>
           <View>
-            <CardHotelesHome />
+            <CardServiceHotel />
           </View>
         </View>
         <View>
@@ -105,7 +105,7 @@ export const HomeScreen = () => {
             </TouchableOpacity>
           </View>
           <View>
-            <CardRestaurantesHome />
+            <CardServiceRestaurant />
           </View>
         </View>
       </ScrollView>

@@ -2,7 +2,9 @@ import { connect } from "../database";
 
 export const getFestividades = async (req, res) => {
   const connection = await connect();
-  const [rows] = await connection.query("SELECT * FROM festividad");
+  const [rows] = await connection.query(
+    "SELECT festividad._idCiudad AS idCiudad, festividad.dia AS Dia, festividad.mes AS Mes, festividad.nombre AS Nombre, festividad.descripcion AS Descripcion, festividad.imagen AS Image, ciudades.nombreCiudad AS NombreCiudad FROM festividad JOIN ciudades ON ciudades.idCiudad = festividad._idCiudad"
+  );
   res.json(rows);
 };
 

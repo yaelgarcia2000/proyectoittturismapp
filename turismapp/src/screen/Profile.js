@@ -22,11 +22,13 @@ export const Profile = () => {
         <Image
           style={styles.imageProfile}
           source={{
-            uri: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            uri:
+              me?.photo ||
+              'https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
           }}
         />
-        <Text style={styles.nombreProfile}>name</Text>
-        <Text>email</Text>
+        <Text style={styles.nombreProfile}>{me ? me.name : ' '}</Text>
+        <Text>{me ? me.email : ' '}</Text>
         <TouchableOpacity style={styles.btn} onPress={closeSesion}>
           <Text style={styles.textBtn}>Cerrar sesión</Text>
         </TouchableOpacity>
