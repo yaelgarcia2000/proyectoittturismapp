@@ -26,14 +26,14 @@ export const NewScreen = () => {
               source={require('../assest/img/jaguar.png')}
             />
           </View>
-          <View style={styles.inputContainer}>
+          {/*<View style={styles.inputContainer}>
             <MaterialIcons name="search" size={25} color={COLORS.dark} />
             <TextInput
               color={COLORS.grey}
               placeholder="Buscar lugar"
               style={{color: COLORS.dark}}
             />
-          </View>
+      </View>*/}
         </View>
       </View>
       <CardLugares />
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     elevation: 20,
   },
   head: {
-    top: 5,
+    top: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

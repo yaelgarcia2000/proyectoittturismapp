@@ -42,6 +42,26 @@ export const saveUsuarioApp = async (req, res) => {
   });
 };
 
+export const getUser = async ({ correo, nombreUsu }) => {
+  const connection = await connect();
+  let WHERE = "";
+  if (correo) {
+    WHERE = `WHERE  correo = '${correo}'`;
+  }
+  if (nombreUsu) {
+    WHERE = `WHERE  nombreUsuario = '${nombreUsu}'`;
+  }
+  const [rows] = await connection.query(`SELECT * FROM usuario_app ${WHERE}`);
+  return rows;
+  {
+    /*return await new Promise((resolve, reject) => {
+    connection.query(`SELECT * FROM usuario_app ${WHERE}`, (err, data) =>
+      err ? reject(err) : resolve(data)
+    );
+  });*/
+  }
+};
+
 export const deleteUsuarioApp = async (req, res) => {
   const connection = await connect();
   await connection.query("DELETE FROM usuario_app WHERE idUsuario = ?", [

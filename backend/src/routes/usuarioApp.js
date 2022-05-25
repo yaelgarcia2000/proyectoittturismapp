@@ -1,4 +1,6 @@
 import { Router } from "express";
+import { validarUsu } from "../controllersDos/usuarios";
+
 import {
   getUsuarioApps,
   getUsuarioAppCount,
@@ -52,7 +54,7 @@ router.get("/usuarioApp/:id", getUsuarioApp);
  *       tags:    [ UsuarioApp ]
  */
 // crear un usuarioApp
-router.post("/usuarioApp", saveUsuarioApp);
+router.post("/usuarioApp", validarUsu);
 /**
  * @swagger
  *  /usuarioApp:

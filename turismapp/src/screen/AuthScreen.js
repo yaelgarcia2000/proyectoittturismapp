@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import {registroUsu} from '../../api';
 import {UserContext} from '../context/user';
 import {
   ImageBackground,
@@ -77,12 +78,13 @@ export const AuthScreen = () => {
     setIsLogin(!isLogin);
     setMessage('');
   };
-  const onSubmitHandler = () => {
+  const onSubmitHandler = async () => {
     const payload = {
-      email,
-      name,
-      password,
+      correo: 'luis@gmail.com',
+      pass: 'yael123456',
+      nombreUsu: 'YaelGracias',
     };
+    await registroUsu(payload);
   };
   const getMessage = () => {
     const status = isError ? `Error: ` : `Success: `;

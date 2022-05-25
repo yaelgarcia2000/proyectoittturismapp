@@ -1,25 +1,25 @@
-const API = 'http://192.168.205.82:3000/entradasUsuarioAgenda';
-const datos = 'http://192.168.205.82:3000/tasks';
-const ciudades = 'http://192.168.205.82:3000/ciudades';
+const baseApi = 'http://192.168.0.17:3000';
+const API = 'entradasUsuarioAgenda';
+const datos = 'http://192.168.0.17:3000/tasks';
+const ciudades = 'http://192.168.0.17:3000/ciudades';
 
-const restaurantes = 'http://192.168.205.82:3000/serviceRestaurant';
-const hoteles = 'http://192.168.205.82:3000/serviceHotel';
-const transportes = 'http://192.168.205.82:3000/serviceTransport';
-const mercados = 'http://192.168.205.82:3000/serviceMarket';
-const bancos = 'http://192.168.205.82:3000/serviceBank';
-const establecimientosGobierno = 'http://192.168.205.82:3000/serviceGovernment';
-const supermercados = 'http://192.168.205.82:3000/serviceSupermarket';
-const abarroteras = 'http://192.168.205.82:3000/serviceShop';
+const restaurantes = 'http://192.168.0.17:3000/serviceRestaurant';
+const hoteles = 'http://192.168.0.17:3000/serviceHotel';
+const transportes = 'http://192.168.0.17:3000/serviceTransport';
+const mercados = 'http://192.168.0.17:3000/serviceMarket';
+const bancos = 'http://192.168.0.17:3000/serviceBank';
+const establecimientosGobierno = 'http://192.168.0.17:3000/serviceGovernment';
+const supermercados = 'http://192.168.0.17:3000/serviceSupermarket';
+const abarroteras = 'http://192.168.0.17:3000/serviceShop';
 
-const zonaTuristica = 'http://192.168.205.82:3000/zonasTuristicas';
-const resenias = 'http://192.168.205.82:3000/resenhasCiudad';
-const festividades = 'http://192.168.205.82:3000/festividad';
-const personajesImportantes =
-  'http://192.168.205.82:3000/personajesImportantes';
-const platillos = 'http://192.168.205.82:3000/platillos';
+const zonaTuristica = 'http://192.168.0.17:3000/zonasTuristicas';
+const resenias = 'http://192.168.0.17:3000/resenhasCiudad';
+const festividades = 'http://192.168.0.17:3000/festividad';
+const personajesImportantes = 'http://192.168.0.17:3000/personajesImportantes';
+const platillos = 'http://192.168.0.17:3000/platillos';
 
 export const getNotas = async () => {
-  const res = await fetch(API);
+  const res = await fetch(`${baseApi}/entradasUsuarioAgenda`);
   return await res.json();
 };
 
@@ -129,5 +129,14 @@ export const getPersonajesImportantes = async () => {
 /* Platillos*/
 export const getPlatillos = async () => {
   const res = await fetch(platillos);
+  return await res.json();
+};
+
+export const registroUsu = async payload => {
+  const res = await fetch(`${baseApi}/usuarioApp`, {
+    method: 'POST',
+    headers: {Accept: 'application/json', 'Content-Type': 'application/json'},
+    body: JSON.stringify(payload),
+  });
   return await res.json();
 };
