@@ -1,22 +1,4 @@
 const baseApi = 'http://192.168.0.17:3000';
-const API = 'entradasUsuarioAgenda';
-const datos = 'http://192.168.0.17:3000/tasks';
-const ciudades = 'http://192.168.0.17:3000/ciudades';
-
-const restaurantes = 'http://192.168.0.17:3000/serviceRestaurant';
-const hoteles = 'http://192.168.0.17:3000/serviceHotel';
-const transportes = 'http://192.168.0.17:3000/serviceTransport';
-const mercados = 'http://192.168.0.17:3000/serviceMarket';
-const bancos = 'http://192.168.0.17:3000/serviceBank';
-const establecimientosGobierno = 'http://192.168.0.17:3000/serviceGovernment';
-const supermercados = 'http://192.168.0.17:3000/serviceSupermarket';
-const abarroteras = 'http://192.168.0.17:3000/serviceShop';
-
-const zonaTuristica = 'http://192.168.0.17:3000/zonasTuristicas';
-const resenias = 'http://192.168.0.17:3000/resenhasCiudad';
-const festividades = 'http://192.168.0.17:3000/festividad';
-const personajesImportantes = 'http://192.168.0.17:3000/personajesImportantes';
-const platillos = 'http://192.168.0.17:3000/platillos';
 
 export const getNotas = async () => {
   const res = await fetch(`${baseApi}/entradasUsuarioAgenda`);
@@ -24,12 +6,12 @@ export const getNotas = async () => {
 };
 
 export const getNota = async ID => {
-  const res = await fetch(`${API}/${ID}`);
+  const res = await fetch(`${baseApi}/entradasUsuarioAgenda/${ID}`);
   return await res.json();
 };
 
 export const guardarAgenda = async nuevaAgenda => {
-  const res = await fetch(API, {
+  const res = await fetch(`${baseApi}/entradasUsuarioAgenda`, {
     method: 'POST',
     headers: {Accept: 'application/json', 'Content-Type': 'application/json'},
     body: JSON.stringify(nuevaAgenda),
@@ -38,13 +20,13 @@ export const guardarAgenda = async nuevaAgenda => {
 };
 
 export const elimarAgenda = async ID => {
-  await fetch(`${API}/${ID}`, {
+  await fetch(`${baseApi}/entradasUsuarioAgenda/${ID}`, {
     method: 'DELETE',
   });
 };
 
 export const updateAgenda = async (ID, newAgenda) => {
-  const res = await fetch(`${API}/${ID}`, {
+  const res = await fetch(`${baseApi}/entradasUsuarioAgenda/${ID}`, {
     method: 'PUT',
     headers: {Accept: 'application/json', 'Content-Type': 'application/json'},
     body: JSON.stringify(newAgenda),
@@ -53,13 +35,13 @@ export const updateAgenda = async (ID, newAgenda) => {
 };
 /* Datos*/
 export const getDatos = async () => {
-  const res = await fetch(datos);
+  const res = await fetch(`${baseApi}/tasks`);
   return await res.json();
 };
 
 /* Lugares*/
 export const getCiudades = async () => {
-  const res = await fetch(ciudades);
+  const res = await fetch(`${baseApi}/ciudades`);
   return await res.json();
 };
 
@@ -67,68 +49,68 @@ export const getCiudades = async () => {
 
 /*Restaurantes*/
 export const getRestaurantes = async () => {
-  const res = await fetch(restaurantes);
+  const res = await fetch(`${baseApi}/serviceRestaurant`);
   return await res.json();
 };
 /*Hoteles*/
 export const getHoteles = async () => {
-  const res = await fetch(hoteles);
+  const res = await fetch(`${baseApi}/serviceHotel`);
   return await res.json();
 };
 /*Transportes*/
 export const getTransportes = async () => {
-  const res = await fetch(transportes);
+  const res = await fetch(`${baseApi}/serviceTransport`);
   return await res.json();
 };
 /*Mercados*/
 export const getMercados = async () => {
-  const res = await fetch(mercados);
+  const res = await fetch(`${baseApi}/serviceMarket`);
   return await res.json();
 };
 /*Bancos*/
 export const getBancos = async () => {
-  const res = await fetch(bancos);
+  const res = await fetch(`${baseApi}/serviceBank`);
   return await res.json();
 };
 /*Establecimientos de gobierno*/
 export const getEstablecimientosGobierno = async () => {
-  const res = await fetch(establecimientosGobierno);
+  const res = await fetch(`${baseApi}/serviceGovernment`);
   return await res.json();
 };
 /*Supermercados*/
 export const getSupermercados = async () => {
-  const res = await fetch(supermercados);
+  const res = await fetch(`${baseApi}/serviceSupermarket`);
   return await res.json();
 };
 /*Abarroteras*/
 export const getAbarroteras = async () => {
-  const res = await fetch(abarroteras);
+  const res = await fetch(`${baseApi}/serviceShop`);
   return await res.json();
 };
 /* ----------Sobre la zona----------*/
 /* Zona turística*/
 export const getZonaTuristica = async () => {
-  const res = await fetch(zonaTuristica);
+  const res = await fetch(`${baseApi}/zonasTuristicas`);
   return await res.json();
 };
 /* Reseñas*/
 export const getResenias = async () => {
-  const res = await fetch(resenias);
+  const res = await fetch(`${baseApi}/resenhasCiudad`);
   return await res.json();
 };
 /* Festividades*/
 export const getFestividades = async () => {
-  const res = await fetch(festividades);
+  const res = await fetch(`${baseApi}/festividad`);
   return await res.json();
 };
 /* Personajes importantes*/
 export const getPersonajesImportantes = async () => {
-  const res = await fetch(personajesImportantes);
+  const res = await fetch(`${baseApi}/personajesImportantes`);
   return await res.json();
 };
 /* Platillos*/
 export const getPlatillos = async () => {
-  const res = await fetch(platillos);
+  const res = await fetch(`${baseApi}/platillos`);
   return await res.json();
 };
 
