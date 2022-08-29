@@ -2,7 +2,7 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {StyleSheet, View, Text, Image, TextInput} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {CardLugares} from '../components/cardLugares';
+import {CardAllNotasCiudad} from '../components/cardAllNotasCiudad';
 import COLORS, {COLOR_PRIMATY_OPACITY, COLOR_PRIMARY} from '../utils/paleta';
 
 export const NewScreen = () => {
@@ -13,7 +13,7 @@ export const NewScreen = () => {
           backgroundColor: COLOR_PRIMARY,
           height: 90,
           paddingHorizontal: 30,
-          marginBottom: 40,
+          marginBottom: 5,
         }}>
         <View>
           <View style={styles.head}>
@@ -36,7 +36,7 @@ export const NewScreen = () => {
       </View>*/}
         </View>
       </View>
-      <CardLugares />
+      <CardAllNotasCiudad />
     </SafeAreaView>
   );
 };

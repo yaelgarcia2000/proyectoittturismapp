@@ -2,7 +2,9 @@ import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {StyleSheet, View, Text, Image, TextInput} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import {CardLugares} from '../components/cardLugares';
+import {CardAllRestaurantes} from '../components/cardAllRestaurantes';
+import {CardAllHoteles} from '../components/cardAllHoteles';
+import {CardAllSuperMercados} from '../components/cardAllSuperMercados';
 import COLORS, {COLOR_PRIMATY_OPACITY, COLOR_PRIMARY} from '../utils/paleta';
 
 export const EstablecimientoProScreen = () => {
@@ -13,7 +15,7 @@ export const EstablecimientoProScreen = () => {
           backgroundColor: COLOR_PRIMARY,
           height: 90,
           paddingHorizontal: 30,
-          marginBottom: 10,
+          marginBottom: 5,
         }}>
         <View>
           <View style={styles.head}>
@@ -36,7 +38,8 @@ export const EstablecimientoProScreen = () => {
           </View>*/}
         </View>
       </View>
-      <CardLugares />
+
+      <CardAllRestaurantes />
     </SafeAreaView>
   );
 };
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({
     elevation: 20,
   },
   head: {
-    top: 5,
+    top: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

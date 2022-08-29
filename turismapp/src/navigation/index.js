@@ -3,12 +3,25 @@ import {UserContext} from '../context/user';
 import {LoginScreeen} from '../screen/Login';
 import {Profile} from '../screen/Profile';
 import {NotaScreen} from '../screen/NotaScreen';
+import {AllAbarroterasScreen} from '../screen/AllAbarroterasScreen';
+import {AllBancosScreen} from '../screen/AllBancosScreen';
+import {AllFestividadesScreen} from '../screen/AllFestividadesScreen';
+import {AllGobiernoScreen} from '../screen/AllGobiernoScreen';
+import {AllHotelesScreen} from '../screen/AllHotelesScreen';
+import {AllMercadosScreen} from '../screen/AllMercadosScreen';
+import {AllPersonajesImportantesScreen} from '../screen/AllPersonajesImportantesScreen';
+import {AllPlatilosScreen} from '../screen/AllPlatilosScreen';
+import {AllReseniasScreen} from '../screen/AllReseniasScreen';
+import {AllRestaurantesScreen} from '../screen/AllRestaurantesScreen';
+import {AllSuperMercadosScreen} from '../screen/AllSuperMercadosScreen';
+import {AllTransportesScreen} from '../screen/AllTransportesScreen';
+import {AllZonasTuristicasScreen} from '../screen/AllZonasTuristicasScreen';
 import {PlaceScreen} from '../screen/PlaceScreen';
 import {DetailsPlaceScreen} from '../screen/DetailsPlaceScreen';
 import {DetailsPlaceDishScreen} from '../screen/DetailsPlaceDishScreen';
 import {DetailsPlaceFestivityScreen} from '../screen/DetailsPlaceFestivityScreen';
 import {DetailsPlaceImportantPeopleScreen} from '../screen/DetailsPlaceImportantPeopleScreen';
-//import {DetailsPlaceReviewScreen} from '../screen/DetailsPlaceReviewScreen';
+import {DetailsNotasCiudadScreen} from '../screen/DetailsNotasCiudadScreen';
 import {DetailsPlaceTouristAreaScreen} from '../screen/DetailsPlaceTouristAreaScreen';
 
 import {DetailsPlaceServiceRestaurantScreen} from '../screen/DetailsPlaceServiceRestaurantScreen';
@@ -63,6 +76,190 @@ export const Navigation = () => {
           component={PlaceScreen}
           options={{headerShown: false, title: 'PlaceScreen'}}
         />
+
+        <Stack.Screen
+          name="AllAbarroterasScreen"
+          component={AllAbarroterasScreen}
+          options={{
+            title: 'Abarroteras de la zona',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllBancosScreen"
+          component={AllBancosScreen}
+          options={{
+            title: 'Bancos de la zona',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllFestividadesScreen"
+          component={AllFestividadesScreen}
+          options={{
+            title: 'Festividades de la zona',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllGobiernoScreen"
+          component={AllGobiernoScreen}
+          options={{
+            title: 'Establecimientos de gobierno',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 20,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllHotelesScreen"
+          component={AllHotelesScreen}
+          options={{
+            title: 'Hoteles de la zona',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllMercadosScreen"
+          component={AllMercadosScreen}
+          options={{
+            title: 'Mercados de la zona',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllPersonajesImportantesScreen"
+          component={AllPersonajesImportantesScreen}
+          options={{
+            title: 'Personajes celebres',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllPlatilosScreen"
+          component={AllPlatilosScreen}
+          options={{
+            title: 'Platillos tradicionales',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllReseniasScreen"
+          component={AllReseniasScreen}
+          options={{
+            title: 'Reseñas',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllRestaurantesScreen"
+          component={AllRestaurantesScreen}
+          options={{
+            title: 'Restaurantes de la zona',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllSuperMercadosScreen"
+          component={AllSuperMercadosScreen}
+          options={{
+            title: 'Supermercados de la zona',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllTransportesScreen"
+          component={AllTransportesScreen}
+          options={{
+            title: 'Transportes de la zona',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+        <Stack.Screen
+          name="AllZonasTuristicasScreen"
+          component={AllZonasTuristicasScreen}
+          options={{
+            title: 'Zonas Turísticas',
+            headerStyle: {backgroundColor: COLOR_PRIMARY},
+            headerTitleStyle: {
+              color: COLORS.white,
+              fontSize: 22,
+              fontWeight: 'bold',
+            },
+            headerTintColor: COLORS.white,
+          }}
+        />
+
         <Stack.Screen
           name="AuthScreen"
           component={AuthScreen}
@@ -97,14 +294,14 @@ export const Navigation = () => {
             title: 'DetailsPlaceImportantPeopleScreen',
           }}
         />
-        {/*<Stack.Screen
-          name="DetailsPlaceReviewScreen"
-          component={DetailsPlaceReviewScreen}
+        <Stack.Screen
+          name="DetailsNotasCiudadScreen"
+          component={DetailsNotasCiudadScreen}
           options={{
             headerShown: false,
-            title: 'DetailsPlaceReviewScreen',
+            title: 'DetailsNotasCiudadScreen',
           }}
-        />*/}
+        />
         <Stack.Screen
           name="DetailsPlaceTouristAreaScreen"
           component={DetailsPlaceTouristAreaScreen}

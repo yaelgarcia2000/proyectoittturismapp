@@ -12,15 +12,20 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
 const {width} = Dimensions.get('screen');
 
-export const CardReviewItem = ({resenias}) => {
+export const CardNotasCiudadesItem = ({notasCiudades}) => {
   const navigation = useNavigation();
+
   return (
     <View>
-      <TouchableOpacity activeOpacity={0.6}>
+      <TouchableOpacity
+        activeOpacity={0.6}
+        onPress={() =>
+          navigation.navigate('DetailsNotasCiudadScreen', notasCiudades)
+        }>
         <ImageBackground
           style={styles.cardImage}
           source={{
-            uri: 'https://th.bing.com/th/id/OIP.WgE46Tyz1KrK3qnuZnwi2wAAAA?pid=ImgDet&rs=1',
+            uri: `https://drive.google.com/uc?id=${notasCiudades.Imagen}`,
           }}>
           <View
             style={{
@@ -34,7 +39,7 @@ export const CardReviewItem = ({resenias}) => {
                 marginTop: 10,
               }}>
               <Ionicons
-                name="md-person-add-sharp"
+                name="ios-document-text"
                 size={20}
                 color={COLORS.white}
               />
@@ -45,33 +50,7 @@ export const CardReviewItem = ({resenias}) => {
                   fontSize: 20,
                   fontWeight: 'bold',
                 }}>
-                {resenias.Nombre}
-              </Text>
-            </View>
-          </View>
-          <Text
-            style={{
-              color: COLORS.white,
-              fontSize: 14,
-              fontWeight: 'bold',
-              marginTop: 20,
-            }}>
-            {resenias.Contenido}
-          </Text>
-          <View
-            style={{
-              flex: 1,
-              justifyContent: 'space-between',
-              flexDirection: 'row',
-              alignItems: 'flex-end',
-            }}>
-            <View
-              style={{
-                flexDirection: 'row',
-              }}>
-              <Ionicons name="at-circle-sharp" size={20} color={COLORS.white} />
-              <Text style={{marginLeft: 5, color: COLORS.white}}>
-                {resenias.Correo}
+                {notasCiudades.Titulo}
               </Text>
             </View>
           </View>

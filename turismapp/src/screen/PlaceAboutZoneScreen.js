@@ -25,7 +25,8 @@ export const PlaceAboutZoneScreen = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Zonas turísticas</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllZonasTuristicasScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>
@@ -34,7 +35,8 @@ export const PlaceAboutZoneScreen = () => {
         </View>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Reseñas</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllReseniasScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>
@@ -43,7 +45,8 @@ export const PlaceAboutZoneScreen = () => {
         </View>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Festividades</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllFestividadesScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>
@@ -52,7 +55,10 @@ export const PlaceAboutZoneScreen = () => {
         </View>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Personajes importantes</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('AllPersonajesImportantesScreen')
+            }>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>
@@ -61,7 +67,8 @@ export const PlaceAboutZoneScreen = () => {
         </View>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Platillos</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllPlatilosScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>

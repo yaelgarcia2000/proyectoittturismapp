@@ -26,7 +26,8 @@ export const PlaceServiceScreen = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Restaurantes</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllRestaurantesScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>
@@ -35,7 +36,8 @@ export const PlaceServiceScreen = () => {
         </View>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Hoteles</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllHotelesScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>
@@ -44,7 +46,8 @@ export const PlaceServiceScreen = () => {
         </View>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Transportes</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllTransportesScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>
@@ -53,7 +56,8 @@ export const PlaceServiceScreen = () => {
         </View>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Mercados</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllMercadosScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>
@@ -62,7 +66,8 @@ export const PlaceServiceScreen = () => {
         </View>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Bancos</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllBancosScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>
@@ -73,7 +78,8 @@ export const PlaceServiceScreen = () => {
           <Text style={styles.titleCategoria}>
             Establecimientos de Gobierno
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllGobiernoScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>
@@ -82,7 +88,8 @@ export const PlaceServiceScreen = () => {
         </View>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Supermercados</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllSuperMercadosScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>
@@ -91,7 +98,8 @@ export const PlaceServiceScreen = () => {
         </View>
         <View style={styles.sectionHear}>
           <Text style={styles.titleCategoria}>Abarroteras</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('PlaceScreen')}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AllAbarroterasScreen')}>
             <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
           </TouchableOpacity>
         </View>

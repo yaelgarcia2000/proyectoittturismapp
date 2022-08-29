@@ -12,6 +12,7 @@ import {
   StatusBar,
   Image,
   Button,
+  Alert,
 } from 'react-native';
 import {COLOR_PRIMARY} from '../utils/paleta';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -20,7 +21,7 @@ import {
   statusCodes,
 } from '@react-native-google-signin/google-signin';
 
-export const AuthScreen = () => {
+export const AuthScreen = ({navigation}) => {
   // Inicio Google
   const [isSession, setIsSession] = useState(false);
   const {setMe} = useContext(UserContext);
@@ -68,12 +69,17 @@ export const AuthScreen = () => {
   };
   // Termina Google
   // contenido Formulario
+  {
+    /*
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+  */
+  }
   const [isError, setIsError] = useState(false);
   const [message, setMessage] = useState('');
   const [isLogin, setIsLogin] = useState(true);
+
   const onChangeHandler = () => {
     setIsLogin(!isLogin);
     setMessage('');
@@ -91,6 +97,27 @@ export const AuthScreen = () => {
     return status + message;
   };
 
+  // VALIDACIONES BIEN CHIDAS
+
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+
+  function handleClick() {
+    if (name == '' || password == '') {
+      Alert.alert('El nombre de usuario y la contraseña son requeridos');
+    } else {
+      if (
+        name == 'YaelGarcia' ||
+        (password == '12345aeiou' && name == 'JairPeralta') ||
+        password == '1234aeiu'
+      ) {
+        navigation.navigate('Root');
+      } else {
+        Alert.alert('El nombre de usuario y la contraseña no son validos');
+      }
+    }
+  }
   return (
     <ImageBackground
       source={require('../assest/img/Iniciar.jpg')}
@@ -108,24 +135,26 @@ export const AuthScreen = () => {
           <View style={styles.inputs}>
             <TextInput
               style={styles.input}
-              placeholder="Correo"
+              placeholder="Nombre usuario"
               //autoCapitalize="none"
-              onChangeText={setEmail}></TextInput>
+              onChangeText={text => setName(text)}></TextInput>
             {!isLogin && (
               <TextInput
                 style={styles.input}
                 placeholder="Nombre"
-                onChangeText={setName}></TextInput>
+                onChangeText={setEmail}></TextInput>
             )}
             <TextInput
               secureTextEntry={true}
               style={styles.input}
               placeholder="Contraseña"
-              onChangeText={setPassword}></TextInput>
+              onChangeText={text => setPassword(text)}></TextInput>
             <Text style={[styles.message, {color: isError ? 'red' : 'green'}]}>
               {message ? getMessage() : null}
             </Text>
-            <TouchableOpacity style={styles.button} onPress={onSubmitHandler}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => handleClick()}>
               <Text style={styles.buttonText}>Ingresar</Text>
             </TouchableOpacity>
             <TouchableOpacity

@@ -114,6 +114,15 @@ export const getPlatillos = async () => {
   return await res.json();
 };
 
+/* Notas ciudad*/
+
+export const getNotasCiudades = async () => {
+  const res = await fetch(`${baseApi}/notasCiudad`);
+  return await res.json();
+};
+
+/* Login*/
+
 export const registroUsu = async payload => {
   const res = await fetch(`${baseApi}/usuarioApp`, {
     method: 'POST',

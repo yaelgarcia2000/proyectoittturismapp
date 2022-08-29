@@ -46,7 +46,7 @@ export const HomeScreen = () => {
       <View
         style={{
           backgroundColor: COLOR_PRIMARY,
-          height: 90,
+          height: 80,
           paddingHorizontal: 30,
           marginBottom: 1,
         }}>
@@ -88,7 +88,7 @@ export const HomeScreen = () => {
           <View style={styles.sectionHear}>
             <Text style={styles.titleCategoria}>Hoteles</Text>
             <TouchableOpacity
-              onPress={() => navigation.navigate('PlaceScreen')}>
+              onPress={() => navigation.navigate('AllHotelesScreen')}>
               <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
             </TouchableOpacity>
           </View>
@@ -100,7 +100,7 @@ export const HomeScreen = () => {
           <View style={styles.sectionHear}>
             <Text style={styles.titleCategoria}>Restaurantes</Text>
             <TouchableOpacity
-              onPress={() => navigation.navigate('PlaceScreen')}>
+              onPress={() => navigation.navigate('AllRestaurantesScreen')}>
               <Text style={{color: COLOR_SECONDARY}}>Ver todo</Text>
             </TouchableOpacity>
           </View>
